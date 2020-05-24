@@ -45,10 +45,10 @@ class _SetStateNotificationPageState extends State<SetStateNotificationPage> {
                 '$_counter',
                 style: Theme.of(context).textTheme.display1,
               ),
+              _IncrementButton(_counter),
             ],
           ),
         ),
-        floatingActionButton: _IncrementButton(_counter),
       ),
     );
   }
@@ -63,7 +63,7 @@ class _IncrementButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
         onTap: () => IncrementNotification("加一").dispatch(context),
-        child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.black),),),)
+        child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),)
     );
   }
 }

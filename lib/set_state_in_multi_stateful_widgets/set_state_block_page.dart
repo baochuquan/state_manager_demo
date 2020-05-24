@@ -37,10 +37,10 @@ class _SetStateBlockPageState extends State<SetStateBlockPage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            _IncrementButton(_counter, _incrementCounter),
           ],
         ),
       ),
-      floatingActionButton: _IncrementButton(_counter, _incrementCounter),
     );
   }
 }
@@ -55,7 +55,7 @@ class _IncrementButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => block(),
-      child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.black),),),)
+      child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),)
     );
   }
 }

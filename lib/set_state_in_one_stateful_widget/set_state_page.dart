@@ -37,14 +37,13 @@ class _SetStatePageState extends State<SetStatePage> {
               '$_counter',
               style: Theme.of(context).textTheme.display1,
             ),
+            GestureDetector(
+                onTap: _incrementCounter,
+                child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$_counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),)
+            )
           ],
         ),
       ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'Increment',
-        child: Icon(Icons.add),
-      ), // This trailing comma makes auto-formatting nicer for build methods.
     );
   }
 }

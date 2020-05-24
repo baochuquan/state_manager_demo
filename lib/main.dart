@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_block_page.dart';
+import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_even_bus_inherited_widget_page.dart';
+import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_inherited_widget_notification_page.dart';
+import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_optimize_page.dart';
+import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_performance_page.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_notification_page.dart';
 import 'package:statemanagerdemo/set_state_in_one_stateful_widget/set_state_page.dart';
 
@@ -49,9 +53,13 @@ class _HomePageState extends State<HomePage> {
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              buildEntry(context, SetStatePage(title: "SetState"), "SetState - 单一StatefuleWidget"),
-              buildEntry(context, SetStateBlockPage(title: "SetState - Block"), "SetState - 多层级Widget"),
+              buildEntry(context, SetStatePage(title: "SetState"), "setState - 单一StatefuleWidget"),
+              buildEntry(context, SetStateBlockPage(title: "SetState - Block"), "setState - 多层级Widget"),
               buildEntry(context, SetStateNotificationPage(title: "SetState - Notification"), "setState - 多层级Widget"),
+              buildEntry(context, SetStateInheritedWidgetNotificationPage(title: "SetState - InheritedWidget & Notification"), "setState - 多层级Widget"),
+              buildEntry(context, SetStateEvenBusInheritedWidgetPage(title: "SetState - EventBus & InheritedWidget",), "setState - 多层级Widget"),
+              buildEntry(context, SetStatePerformancePage(title: "Performance",), "性能"),
+              buildEntry(context, SetStateOptimizePage(title: "Optimize",), "优化"),
             ]
         ),
       )
