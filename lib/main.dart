@@ -6,6 +6,7 @@ import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_o
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_performance_page.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_notification_page.dart';
 import 'package:statemanagerdemo/set_state_in_one_stateful_widget/set_state_page.dart';
+import 'package:statemanagerdemo/with_provider/pub_provider_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -59,7 +60,8 @@ class _HomePageState extends State<HomePage> {
               buildEntry(context, SetStateInheritedWidgetNotificationPage(title: "SetState - InheritedWidget & Notification"), "setState - 多层级Widget"),
               buildEntry(context, SetStateEvenBusInheritedWidgetPage(title: "SetState - EventBus & InheritedWidget",), "setState - 多层级Widget"),
               buildEntry(context, SetStatePerformancePage(title: "Performance",), "性能"),
-              buildEntry(context, SetStateOptimizePage(title: "Optimize",), "优化"),
+//              buildEntry(context, SetStateOptimizePage(title: "Optimize",), "优化"),
+//              buildEntry(context, PubProviderPage(title: "Provider"), "Provider"),
             ]
         ),
       )
