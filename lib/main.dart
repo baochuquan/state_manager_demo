@@ -60,8 +60,7 @@ class _HomePageState extends State<HomePage> {
               buildEntry(context, SetStateInheritedWidgetNotificationPage(title: "SetState - InheritedWidget & Notification"), "setState - 多层级Widget"),
               buildEntry(context, SetStateEvenBusInheritedWidgetPage(title: "SetState - EventBus & InheritedWidget",), "setState - 多层级Widget"),
               buildEntry(context, SetStatePerformancePage(title: "Performance",), "性能"),
-//              buildEntry(context, SetStateOptimizePage(title: "Optimize",), "优化"),
-//              buildEntry(context, PubProviderPage(title: "Provider"), "Provider"),
+              buildEntry(context, PubProviderPage(title: "Pub Provider",), "Pub Provider"),
             ]
         ),
       )
