@@ -2,8 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_block_page.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_even_bus_inherited_widget_page.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_inherited_widget_notification_page.dart';
-import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_optimize_page.dart';
-import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_performance_page.dart';
 import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_notification_page.dart';
 import 'package:statemanagerdemo/set_state_in_one_stateful_widget/set_state_page.dart';
 import 'package:statemanagerdemo/with_bloc/bloc_page.dart';
@@ -64,30 +62,42 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text(widget.title),
-      ),
-      body: Center(
-        child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              buildEntry(context, SetStatePage(title: "SetState"), "setState - 单一StatefulWidget"),
-              buildEntry(context, SetStateBlockPage(title: "SetState - Block"), "setState - 多层级Widget"),
-              buildEntry(context, SetStateNotificationPage(title: "SetState - Notification"), "setState - 多层级Widget"),
-              buildEntry(context, SetStateInheritedWidgetNotificationPage(title: "SetState - InheritedWidget & Notification"), "setState - 多层级Widget"),
-              buildEntry(context, SetStateEvenBusInheritedWidgetPage(title: "SetState - EventBus & InheritedWidget",), "setState - 多层级Widget"),
-              buildEntry(context, SetStatePerformancePage(title: "Performance",), "性能"),
-              buildEntry(context, PubProviderPage(title: "Pub Provider",), "Pub Provider"),
-              buildEntry(context, PubReduxPage(title: "Pub Redux",), "Pub Redux"),
-              buildEntry(context, BlocPage(title: "BLoC"), "BLoC"),
-            ]
+        appBar: AppBar(
+          title: Text(widget.title),
         ),
-      )
-    );
+        body: Center(
+          child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
+            buildEntry(context, SetStatePage(title: "SetState"), "setState - 单一StatefulWidget"),
+            buildEntry(context, SetStateBlockPage(title: "SetState - Block"), "setState - 多层级Widget"),
+            buildEntry(context, SetStateNotificationPage(title: "SetState - Notification"), "setState - 多层级Widget"),
+            buildEntry(
+                context,
+                SetStateInheritedWidgetNotificationPage(title: "SetState - InheritedWidget & Notification"),
+                "setState - 多层级Widget"),
+            buildEntry(
+                context,
+                SetStateEvenBusInheritedWidgetPage(
+                  title: "SetState - EventBus & InheritedWidget",
+                ),
+                "setState - 多层级Widget"),
+            buildEntry(
+                context,
+                PubProviderPage(
+                  title: "Pub Provider",
+                ),
+                "Pub Provider"),
+            buildEntry(
+                context,
+                PubReduxPage(
+                  title: "Pub Redux",
+                ),
+                "Pub Redux"),
+            buildEntry(context, BlocPage(title: "BLoC"), "BLoC"),
+          ]),
+        ));
   }
 
   Center buildEntry(BuildContext context, Widget page, String title) {
