@@ -72,6 +72,8 @@ class _IncrementButton extends StatelessWidget {
   }
 }
 
+/// CounterInheritedWidget
+
 class CounterInheritedWidget extends InheritedWidget {
   final int counter;
 
@@ -90,6 +92,8 @@ class CounterInheritedWidget extends InheritedWidget {
     return old.counter != counter;
   }
 }
+
+/// IncrementNotification
 
 class IncrementNotification extends Notification {
   final String msg;

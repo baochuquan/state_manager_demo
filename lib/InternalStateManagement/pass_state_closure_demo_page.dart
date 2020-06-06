@@ -47,14 +47,14 @@ class _PassStateClosureDemoPageState extends State<PassStateClosureDemoPage> {
 
 class _IncrementButton extends StatelessWidget {
   int counter = 0;
-  Function block;
+  Function closure;
 
-  _IncrementButton(this.counter, this.block);
+  _IncrementButton(this.counter, this.closure);
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: () => block(),
+      onTap: () => closure(),
       child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),)
     );
   }

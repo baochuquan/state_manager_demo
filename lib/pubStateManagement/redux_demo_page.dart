@@ -16,11 +16,11 @@ class ReduxDemoPage extends StatefulWidget {
 }
 
 class _ReduxDemoPageState extends State<ReduxDemoPage> {
-  final store = Store<CounterState>(reducer, initialState: CounterState.initState());
+  final store = Store<CounterReduxState>(reducer, initialState: CounterReduxState.initState());
 
   @override
   Widget build(BuildContext context) {
-    return StoreProvider<CounterState>(
+    return StoreProvider<CounterReduxState>(
       store: store,
       child: Scaffold(
         appBar: AppBar(
@@ -33,7 +33,7 @@ class _ReduxDemoPageState extends State<ReduxDemoPage> {
               Text(
                 'You have pushed the button this many times:',
               ),
-              StoreConnector<CounterState, int>(
+              StoreConnector<CounterReduxState, int>(
                 converter: (store) => store.state.value,
                 builder: (context, count) {
                   return Text("$count", style: Theme.of(context).textTheme.display1);
@@ -53,14 +53,14 @@ class _IncrementButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return StoreConnector<CounterState, VoidCallback>(
+    return StoreConnector<CounterReduxState, VoidCallback>(
       converter: (store) {
         return () => store.dispatch(Action.increment);
       },
       builder: (context, callback) {
         return GestureDetector(
             onTap: callback,
-            child: StoreConnector<CounterState, int>(
+            child: StoreConnector<CounterReduxState, int>(
               converter: (store) => store.state.value,
               builder: (context, count) {
                 return ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$count", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),);
@@ -72,15 +72,15 @@ class _IncrementButton extends StatelessWidget {
   }
 }
 
-/// State: CounterState
+/// State: CounterReduxState
 
-class CounterState {
+class CounterReduxState {
   int _counter = 0;
   int get value => _counter;
 
-  CounterState(this._counter);
+  CounterReduxState(this._counter);
 
-  CounterState.initState() {
+  CounterReduxState.initState() {
     _counter = 0;
   }
 }
@@ -92,9 +92,9 @@ enum Action{
 }
 
 /// Reducer
-CounterState reducer(CounterState state, dynamic action) {
+CounterReduxState reducer(CounterReduxState state, dynamic action) {
   if (action == Action.increment) {
-    return CounterState(state.value + 1);
+    return CounterReduxState(state.value + 1);
   }
   return state;
 }

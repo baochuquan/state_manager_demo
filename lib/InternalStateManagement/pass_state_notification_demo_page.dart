@@ -24,7 +24,6 @@ class _PassStateNotificationDemoPageState extends State<PassStateNotificationDem
   Widget build(BuildContext context) {
     return NotificationListener<IncrementNotification>(
       onNotification: (notification) {
-        print("BCQ: Notification = ${notification.msg}");
         setState(() {
           _incrementCounter();
         });
@@ -62,11 +61,13 @@ class _IncrementButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-        onTap: () => IncrementNotification("加一").dispatch(context),
+        onTap: () => IncrementNotification("加一操作").dispatch(context),
         child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("$counter", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),)
     );
   }
 }
+
+/// IncrementNotification
 
 class IncrementNotification extends Notification {
   final String msg;

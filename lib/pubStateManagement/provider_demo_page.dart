@@ -18,8 +18,8 @@ class _ProviderDemoPageState extends State<ProviderDemoPage> {
 
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<CounterModel>(
-      create: (_) => CounterModel(),
+    return ChangeNotifierProvider<CounterProviderState>(
+      create: (_) => CounterProviderState(),
       child: Scaffold(
         appBar: AppBar(
           title: Text(widget.title),
@@ -31,7 +31,7 @@ class _ProviderDemoPageState extends State<ProviderDemoPage> {
               Text(
                 'You have pushed the button this many times:',
               ),
-              Consumer<CounterModel>(builder: (context, counter, _) => Text("${counter.value}", style: Theme.of(context).textTheme.display1)),
+              Consumer<CounterProviderState>(builder: (context, counter, _) => Text("${counter.value}", style: Theme.of(context).textTheme.display1)),
               _IncrementButton(),
             ],
           ),
@@ -46,7 +46,7 @@ class _IncrementButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final _counter = Provider.of<CounterModel>(context);
+    final _counter = Provider.of<CounterProviderState>(context);
     return GestureDetector(
         onTap: () => _counter.incrementCounter(),
         child: ClipOval(child: Container(width: 50, height: 50, alignment: Alignment.center,color: Colors.blue, child: Text("${_counter.value}", textAlign: TextAlign.center,style: TextStyle(fontSize: 24, color: Colors.white),),),)
@@ -54,9 +54,9 @@ class _IncrementButton extends StatelessWidget {
   }
 }
 
-/// CounterModel
+/// CounterProviderState
 
-class CounterModel with ChangeNotifier {
+class CounterProviderState with ChangeNotifier {
   int _counter = 0;
   int get value => _counter;
 
