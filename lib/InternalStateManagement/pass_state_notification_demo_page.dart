@@ -2,16 +2,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SetStateNotificationPage extends StatefulWidget {
+class PassStateNotificationDemoPage extends StatefulWidget {
   final String title;
 
-  SetStateNotificationPage({Key key, this.title}) : super(key: key);
+  PassStateNotificationDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _SetStateNotificationPageState createState() => _SetStateNotificationPageState();
+  _PassStateNotificationDemoPageState createState() => _PassStateNotificationDemoPageState();
 }
 
-class _SetStateNotificationPageState extends State<SetStateNotificationPage> {
+class _PassStateNotificationDemoPageState extends State<PassStateNotificationDemoPage> {
   int _counter = 0;
 
   void _incrementCounter() {

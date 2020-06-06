@@ -4,16 +4,16 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SetStateInheritedWidgetNotificationPage extends StatefulWidget {
+class InheritedWidgetNotificationDemoPage extends StatefulWidget {
   final String title;
 
-  SetStateInheritedWidgetNotificationPage({Key key, this.title}) : super(key: key);
+  InheritedWidgetNotificationDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _SetStateInheritedWidgetNotificationPageState createState() => _SetStateInheritedWidgetNotificationPageState();
+  _InheritedWidgetNotificationDemoPageState createState() => _InheritedWidgetNotificationDemoPageState();
 }
 
-class _SetStateInheritedWidgetNotificationPageState extends State<SetStateInheritedWidgetNotificationPage> {
+class _InheritedWidgetNotificationDemoPageState extends State<InheritedWidgetNotificationDemoPage> {
   int _counter = 0;
 
   void _incrementCounter() {

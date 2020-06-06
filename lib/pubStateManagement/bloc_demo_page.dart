@@ -6,16 +6,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class BlocPage extends StatefulWidget {
+class BlocDemoPage extends StatefulWidget {
   final String title;
 
-  BlocPage({Key key, this.title}) : super(key: key);
+  BlocDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _BlocPageState createState() => _BlocPageState();
+  _BlocDemoPageState createState() => _BlocDemoPageState();
 }
 
-class _BlocPageState extends State<BlocPage> {
+class _BlocDemoPageState extends State<BlocDemoPage> {
   final bloc = CounterBloc();
 
   @override

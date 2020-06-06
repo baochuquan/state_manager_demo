@@ -6,16 +6,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_redux/flutter_redux.dart';
 import 'package:redux/redux.dart';
 
-class PubReduxPage extends StatefulWidget {
+class ReduxDemoPage extends StatefulWidget {
   final String title;
 
-  PubReduxPage({Key key, this.title}) : super(key: key);
+  ReduxDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _PubReduxPageState createState() => _PubReduxPageState();
+  _ReduxDemoPageState createState() => _ReduxDemoPageState();
 }
 
-class _PubReduxPageState extends State<PubReduxPage> {
+class _ReduxDemoPageState extends State<ReduxDemoPage> {
   final store = Store<CounterState>(reducer, initialState: CounterState.initState());
 
   @override

@@ -2,16 +2,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SetStateBlockPage extends StatefulWidget {
+class PassStateClosureDemoPage extends StatefulWidget {
   final String title;
 
-  SetStateBlockPage({Key key, this.title}) : super(key: key);
+  PassStateClosureDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _SetStateBlockPageState createState() => _SetStateBlockPageState();
+  _PassStateClosureDemoPageState createState() => _PassStateClosureDemoPageState();
 }
 
-class _SetStateBlockPageState extends State<SetStateBlockPage> {
+class _PassStateClosureDemoPageState extends State<PassStateClosureDemoPage> {
   int _counter = 0;
 
   void _incrementCounter() {

@@ -2,16 +2,16 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SetStatePage extends StatefulWidget {
+class DirectDemoPage extends StatefulWidget {
   final String title;
 
-  SetStatePage({Key key, this.title}) : super(key: key);
+  DirectDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _SetStatePageState createState() => _SetStatePageState();
+  _DirectDemoPageState createState() => _DirectDemoPageState();
 }
 
-class _SetStatePageState extends State<SetStatePage> {
+class _DirectDemoPageState extends State<DirectDemoPage> {
   int _counter = 0;
 
   void _incrementCounter() {

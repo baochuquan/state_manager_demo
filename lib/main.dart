@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_block_page.dart';
-import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_even_bus_inherited_widget_page.dart';
-import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_inherited_widget_notification_page.dart';
-import 'package:statemanagerdemo/set_state_in_multi_stateful_widgets/set_state_notification_page.dart';
-import 'package:statemanagerdemo/set_state_in_one_stateful_widget/set_state_page.dart';
-import 'package:statemanagerdemo/with_bloc/bloc_page.dart';
-import 'package:statemanagerdemo/with_provider/pub_provider_page.dart';
-import 'package:statemanagerdemo/with_redux/pub_redux_page.dart';
+import 'package:statemanagerdemo/InternalStateManagement/pass_state_closure_demo_page.dart';
+import 'package:statemanagerdemo/InternalStateManagement/inherited_widget_even_bus_demo_page.dart';
+import 'package:statemanagerdemo/InternalStateManagement/inherited_widget_notification_demo_page.dart';
+import 'package:statemanagerdemo/InternalStateManagement/pass_state_notification_demo_page.dart';
+import 'package:statemanagerdemo/InternalStateManagement/direct_demo_page.dart';
+import 'package:statemanagerdemo/pubStateManagement/bloc_demo_page.dart';
+import 'package:statemanagerdemo/pubStateManagement/provider_demo_page.dart';
+import 'package:statemanagerdemo/pubStateManagement/redux_demo_page.dart';
 
 void main() => runApp(MyApp());
 
@@ -70,32 +70,16 @@ class _HomePageState extends State<HomePage> {
         ),
         body: Center(
           child: Column(mainAxisAlignment: MainAxisAlignment.center, children: <Widget>[
-            buildEntry(context, SetStatePage(title: "SetState"), "setState - 单一StatefulWidget"),
-            buildEntry(context, SetStateBlockPage(title: "SetState - Block"), "setState - 多层级Widget"),
-            buildEntry(context, SetStateNotificationPage(title: "SetState - Notification"), "setState - 多层级Widget"),
-            buildEntry(
-                context,
-                SetStateInheritedWidgetNotificationPage(title: "SetState - InheritedWidget & Notification"),
-                "setState - 多层级Widget"),
-            buildEntry(
-                context,
-                SetStateEvenBusInheritedWidgetPage(
-                  title: "SetState - EventBus & InheritedWidget",
-                ),
-                "setState - 多层级Widget"),
-            buildEntry(
-                context,
-                PubProviderPage(
-                  title: "Pub Provider",
-                ),
-                "Pub Provider"),
-            buildEntry(
-                context,
-                PubReduxPage(
-                  title: "Pub Redux",
-                ),
-                "Pub Redux"),
-            buildEntry(context, BlocPage(title: "BLoC"), "BLoC"),
+            // Flutter 内置的状态管理方案
+            buildEntry(context, DirectDemoPage(title: "直接访问 + 直接更新"), "直接访问 + 直接更新"),
+            buildEntry(context, PassStateClosureDemoPage(title: "状态传递 + 闭包传递"), "状态传递 + 闭包传递"),
+            buildEntry(context, PassStateNotificationDemoPage(title: "状态传递 + Notification"), "状态传递 + Notification"),
+            buildEntry(context, InheritedWidgetNotificationDemoPage(title: "InheritedWidget + Notification"), "InheritedWidget + Notification"),
+            buildEntry(context, InheritedWidgetEventBusDemoPage(title: "InheritedWidget + EventBus"), "InheritedWidget + EventBus"),
+            // 基于 Pub 的状态管理方案
+            buildEntry(context, ProviderDemoPage(title: "Provider"), "Provider"),
+            buildEntry(context, ReduxDemoPage(title: "Redux"), "Redux"),
+            buildEntry(context, BlocDemoPage(title: "BLoC"), "BLoC"),
           ]),
         ));
   }

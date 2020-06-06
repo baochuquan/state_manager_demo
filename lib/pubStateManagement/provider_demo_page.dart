@@ -5,16 +5,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
-class PubProviderPage extends StatefulWidget {
+class ProviderDemoPage extends StatefulWidget {
   final String title;
 
-  PubProviderPage({Key key, this.title}) : super(key: key);
+  ProviderDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _PubProviderPageState createState() => _PubProviderPageState();
+  _ProviderDemoPageState createState() => _ProviderDemoPageState();
 }
 
-class _PubProviderPageState extends State<PubProviderPage> {
+class _ProviderDemoPageState extends State<ProviderDemoPage> {
 
   @override
   Widget build(BuildContext context) {

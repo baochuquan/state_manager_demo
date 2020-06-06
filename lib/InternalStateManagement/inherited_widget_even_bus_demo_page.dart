@@ -4,16 +4,16 @@ import 'dart:developer';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
-class SetStateEvenBusInheritedWidgetPage extends StatefulWidget {
+class InheritedWidgetEventBusDemoPage extends StatefulWidget {
   final String title;
 
-  SetStateEvenBusInheritedWidgetPage({Key key, this.title}) : super(key: key);
+  InheritedWidgetEventBusDemoPage({Key key, this.title}) : super(key: key);
 
   @override
-  _SetStateEvenBusInheritedWidgetPageState createState() => _SetStateEvenBusInheritedWidgetPageState();
+  _InheritedWidgetEventBusDemoPageState createState() => _InheritedWidgetEventBusDemoPageState();
 }
 
-class _SetStateEvenBusInheritedWidgetPageState extends State<SetStateEvenBusInheritedWidgetPage> {
+class _InheritedWidgetEventBusDemoPageState extends State<InheritedWidgetEventBusDemoPage> {
   int _counter = 0;
 
   void _incrementCounter() {
